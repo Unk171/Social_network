@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 const { Thought } = require("./Thought");
 const userSchema = new Schema(
   {
-    userName: {
+    username: {
       type: String,
       required: true,
       trim: true,
