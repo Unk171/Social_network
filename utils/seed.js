@@ -14,24 +14,29 @@ connection.once("open", async () => {
 
   const usersData = [
     {
-      userName: "user1",
+      username: "user1",
       email: "user1@example.com",
+      friends: [],
     },
     {
-      userName: "user2",
+      username: "user2",
       email: "user2@example.com",
+      friends: [],
     },
     {
-      userName: "user3",
+      username: "user3",
       email: "user3@example.com",
+      friends: [],
     },
     {
-      userName: "user4",
+      username: "user4",
       email: "user4@example.com",
+      friends: [],
     },
     {
-      userName: "user5",
+      username: "user5",
       email: "user5@example.com",
+      friends: [],
     },
   ];
 
