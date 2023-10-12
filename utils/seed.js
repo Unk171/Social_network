@@ -69,33 +69,6 @@ connection.once("open", async () => {
       username: "user3",
       reactions: [{ reactionText: "Sounds magical!", username: "user4" }],
     },
-    {
-      thoughtText: "Attending a music concert tonight!",
-      username: "user1",
-      reactions: [],
-    },
-    {
-      thoughtText: "Working on a coding project.",
-      username: "user5",
-      reactions: [],
-    },
-    {
-      thoughtText: "Learning a new language is challenging.",
-      username: "user4",
-      reactions: [
-        { reactionText: "Keep going, you can do it!", username: "user2" },
-      ],
-    },
-    {
-      thoughtText: "Celebrating my birthday today!",
-      username: "user3",
-      reactions: [{ reactionText: "Happy Birthday!", username: "user1" }],
-    },
-    {
-      thoughtText: "Gardening is my favorite hobby.",
-      username: "user2",
-      reactions: [],
-    },
   ];
 
   await User.collection.insertMany(usersData);

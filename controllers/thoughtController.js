@@ -20,7 +20,7 @@ module.exports = {
   },
   async getThought(req, res) {
     try {
-      const thought = await Thought.findOne({ _id: req.params.userId }).select(
+      const thought = await Thought.findOne({ _id: req.params.thoughtId }).select(
         "-__v"
       );
       if (!thought) {
@@ -41,21 +41,23 @@ module.exports = {
       if (!thought) {
         return res.status(404).json({ message: "No thought with this ID" });
       }
-      res.json(user);
+      res.json(thought);
     } catch (err) {
+      console.error(err);
       res.status(500).json(err);
     }
   },
   async deleteThought(req, res) {
     try {
       const thought = await Thought.findOneAndDelete({
-        _id: req.params.userId,
+        _id: req.params.thoughtId,
       });
       if (!thought) {
         return res.status(404).json({ message: "No thought with this ID" });
       }
       res.json({ message: "Thought deleted" });
     } catch (err) {
+      console.error(err);
       return res.status(500).json(err);
     }
   },
@@ -72,6 +74,7 @@ module.exports = {
       await thought.save();
       res.json(thought.reactions[thought.reactions.length - 1]);
     } catch (err) {
+      console.error(err);
       return res.status(500).json(err);
     }
   },
